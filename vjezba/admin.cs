@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace vjezba
 {
@@ -41,16 +42,20 @@ namespace vjezba
                 {
                     s=s.Replace("|", " ");
                     books.Add(s);
-                    s = sr.ReadLine();
+                    
                 }
                 if (razlomljena[2] == src)
                 {
                     s = s.Replace("|", " ");
                     books.Add(s);
-                    s = sr.ReadLine();
+                    
                 }
+                s = sr.ReadLine();
             }
             sr.Close();
+            if(books.Count==0)
+            MessageBox.Show("Nema rezultata pretrage");
+
             return books;
         }
         public static List<int> GetCountByGenre()
