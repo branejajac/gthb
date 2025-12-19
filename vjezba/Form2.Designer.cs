@@ -105,8 +105,8 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Romantika",
-            "Detektivski"});
+            "romantika",
+            "detektivski"});
             this.comboBox1.Location = new System.Drawing.Point(115, 357);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(256, 28);

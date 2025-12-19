@@ -29,9 +29,9 @@ namespace vjezba
                 s = textBox1.Text + "|" + textBox2.Text + "|" + dateTimePicker1.Text + "|" + comboBox1.Text + "|" + numericUpDown1.Value + "|" + "nedostupna";
             }
             admin.SaveBook(s);
-            MessageBox.Show("Knjiga je spremljena.");
-            textBox1.Clear();
-            textBox2.Clear();
+            MessageBox.Show("Knjiga je spremljena!");
+            textBox1.Text = "";
+            textBox2.Text = "";
             comboBox1.ResetText();
             numericUpDown1.Value = 0;
             dateTimePicker1.Value = DateTime.Now;

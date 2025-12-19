@@ -31,7 +31,7 @@ namespace vjezba
         }
         public static List<string> SearchByTitleOrAuthor(string src)
         {
-            List<string> results = new List<string>();
+            List<string> books = new List<string>();
             StreamReader sr = new StreamReader("books.txt");
             string s = sr.ReadLine();
             while (s != null)
@@ -39,42 +39,44 @@ namespace vjezba
                 string[] razlomljena = s.Split('|');
                 if (razlomljena[1] == src)
                 {
-                    results.Add(s);
+                    s=s.Replace("|", " ");
+                    books.Add(s);
                     s = sr.ReadLine();
                 }
-                else if (razlomljena[2] == src)
+                if (razlomljena[2] == src)
                 {
-                    results.Add(s);
+                    s = s.Replace("|", " ");
+                    books.Add(s);
                     s = sr.ReadLine();
                 }
             }
             sr.Close();
-            return results;
+            return books;
         }
         public static List<int> GetCountByGenre()
         {
-            int brRomantika = 0;
-            int brDetektivski = 0;
-            List<int> counts = new List<int>();
+            int brr = 0;
+            int brd = 0;
+            List<int> books = new List<int>();
             StreamReader sr = new StreamReader("books.txt");
             string s = sr.ReadLine();
             while (s != null)
             {
                 string[] razlomljena = s.Split('|');
-                if (razlomljena[4] == "Romantika")
+                if (razlomljena[4] == "romantika")
                 {
-                    brRomantika++;
+                    brr++;
                 }
-                else if (razlomljena[4] == "Detektivski")
+                else if (razlomljena[4] == "detektivski")
                 {
-                    brDetektivski++;
+                    brd++;
                 }
                 s = sr.ReadLine();
             }
-            counts.Add(brRomantika);
-            counts.Add(brDetektivski);
+            books.Add(brr);
+            books.Add(brd);
             sr.Close();
-            return counts;
+            return books;
         }
     }
 }
