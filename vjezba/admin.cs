@@ -38,13 +38,13 @@ namespace vjezba
             while (s != null)
             {
                 string[] razlomljena = s.Split('|');
-                if (razlomljena[1] == src)
+                if (razlomljena[0] == src)
                 {
                     s=s.Replace("|", " ");
                     books.Add(s);
                     
                 }
-                if (razlomljena[2] == src)
+                if (razlomljena[1] == src)
                 {
                     s = s.Replace("|", " ");
                     books.Add(s);
@@ -68,11 +68,11 @@ namespace vjezba
             while (s != null)
             {
                 string[] razlomljena = s.Split('|');
-                if (razlomljena[4] == "romantika")
+                if (razlomljena[3] == "romantika")
                 {
                     brr++;
                 }
-                else if (razlomljena[4] == "detektivski")
+                else if (razlomljena[3] == "detektivski")
                 {
                     brd++;
                 }
